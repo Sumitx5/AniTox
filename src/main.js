@@ -10,32 +10,14 @@ window.home = () => { hideAll(); document.getElementById("home").hidden = false;
 window.searchAnim = () => { hideAll(); document.getElementById("search").hidden = false; };
 window.help = () => { hideAll(); document.getElementById("help").hidden = false; };
 
-window.watchNow = (anime) => {
-    hideAll();
-    const playerView = document.getElementById("player-view");
-    const player = document.getElementById("anime-player");
-    const titleHeader = document.getElementById("now-watching-title");
-    
-    playerView.hidden = false;
-    const trailerId = anime.trailer ? anime.trailer.youtube_id : null;
-
-    if (trailerId) {
-        player.src = `https://www.youtube.com/embed/${trailerId}?autoplay=1&rel=0`;
-        titleHeader.innerText = `Watching Trailer: ${anime.title_english || anime.title}`;
-    } else {
-        player.src = ""; 
-        titleHeader.innerText = `No trailer available for ${anime.title_english || anime.title}`;
-    }
-    fetchAnimeDetails(anime.mal_id, anime.title_english || anime.title);
-};
-
 function loadVideo(videoId) {
     const player = document.getElementById("anime-player");
-    player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    if (player) player.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
 }
 
 async function fetchAnimeDetails(id, animeTitle) {
     const epListContainer = document.getElementById("episode-list");
+    if (!epListContainer) return;
     epListContainer.innerHTML = "<p style='color:white;'>Loading Episodes...</p>";
 
     try {
@@ -48,22 +30,89 @@ async function fetchAnimeDetails(id, animeTitle) {
     }
 }
 
+async function playRealEpisode(animeTitle, episodeNum = 1) {
+    if (!window.currentAnime) return;
+
+    const player = document.getElementById("anime-player");
+    const titleHeader = document.getElementById("now-watching-title");
+    if (!player) return;
+
+    const isTv = window.currentAnime.type ? (window.currentAnime.type.toLowerCase() !== "movie") : true;
+    let streamId = null;
+
+    const cleanTitle = (str) => {
+        if (!str) return "";
+        return str.toLowerCase()
+                  .replace(/[\s\-\:]the\smovie$/i, "")
+                  .replace(/[^a-z0-9]/g, "")
+                  .trim();
+    };
+
+    if (window.currentAnime.imdb_id) {
+        streamId = window.currentAnime.imdb_id;
+    } else {
+        const apiTitleEng = cleanTitle(window.currentAnime.title_english);
+        const apiTitleRom = cleanTitle(window.currentAnime.title);
+        
+        const activeDatabase = isTv ? animeDatabase : movieDatabase;
+
+        for (const key in activeDatabase) {
+            const localName = cleanTitle(activeDatabase[key].name);
+        
+            if ((apiTitleEng && localName === apiTitleEng) || (apiTitleRom && localName === apiTitleRom)) {
+                streamId = activeDatabase[key].imdb_id || key;
+                break;
+            }
+        }
+    }
+
+    if (!streamId) {
+        console.warn(`No normalized match found for: ${animeTitle}`);
+        const trailerId = window.currentAnime.trailer ? window.currentAnime.trailer.youtube_id : null;
+        if (trailerId) {
+            player.src = `https://www.youtube.com/embed/${trailerId}?autoplay=1&rel=0`;
+            if (titleHeader) titleHeader.innerText = `Watching Trailer: ${animeTitle}`;
+        } else {
+            player.src = "";
+            if (titleHeader) titleHeader.innerText = `No Stream Found for ${animeTitle}`;
+            alert(`Could not match "${animeTitle}" to database.`);
+        }
+        return;
+    }
+
+    if (!isTv) {
+        player.src = `https://vaplayer.ru/embed/movie/${streamId}`;
+        if (titleHeader) titleHeader.innerText = `Streaming Movie: ${animeTitle}`;
+    } else {
+        const season = 1; 
+        player.src = `https://vaplayer.ru/embed/tv/${streamId}/${season}/${episodeNum}`;
+        if (titleHeader) titleHeader.innerText = `Streaming: ${animeTitle} - Episode ${episodeNum}`;
+    }
+
+    console.log(`🎬 Stream Mounted Successfully: ${player.src}`);
+}
+
 function renderEpisodes(episodesArray, animeTitle) {
     const list = document.getElementById("episode-list");
+    if (!list) return;
     list.innerHTML = ""; 
+
+    if (!episodesArray || episodesArray.length === 0) {
+        list.innerHTML = "<p style='color:white; padding:10px;'>No structured episode links found.</p>";
+        return;
+    }
 
     episodesArray.forEach(ep => {
         const item = document.createElement("div");
         item.className = "episode-item";
-        item.id = `ep-${ep.mal_id}`; // Unique ID for highlighting
-        item.innerHTML = `<span>Ep ${ep.mal_id}: ${ep.title}</span>`;
+        item.id = `ep-${ep.mal_id}`; 
+        item.innerHTML = `<span>Ep ${ep.mal_id}: ${ep.title || 'Episode ' + ep.mal_id}</span>`;
         
         item.onclick = async () => {
             const prev = document.querySelector(".episode-item.active");
             if (prev) prev.classList.remove("active");
             
             item.classList.add("active");
-            
             await playRealEpisode(animeTitle, ep.mal_id);
         };
         
@@ -71,27 +120,24 @@ function renderEpisodes(episodesArray, animeTitle) {
     });
 }
 
-let animeIdLookupTable = {};
+let movieDatabase = {};
+let animeDatabase = {};
 
 async function loadAnimeIdBridge() {
     try {
-        const response = await fetch('./anime_ids.json');
-        const rawData = await response.json();
-
-        Object.values(rawData).forEach(entry => {
-            if (entry.mal_id || entry.anilist_id) {
-                const keyId = String(entry.mal_id || entry.anilist_id);
-                animeIdLookupTable[keyId] = {
-                    tvdbId: entry.tvdb_id,
-                    tmdbShowId: entry.tmdb_show_id || null,
-                    tmdbMovieId: entry.tmdb_movie_id || null,
-                    imdbId: entry.imdb_id || null
-                };
-            }
-        });
-        console.log("🎯 ID Bridge Synced. Total Indexed Keys:", Object.keys(animeIdLookupTable).length);
+        const movieResponse = await fetch('./movies_list_imdb.json');
+        movieDatabase = await movieResponse.json();
+        console.log("🎬 Movies Loaded Successfully. Size:", Object.keys(movieDatabase).length);
     } catch (err) {
-        console.error("Critical error building local map cross-reference table:", err);
+        console.error("Critical parse block crash tracking structural initialization parameters on Movies JSON file:", err);
+    }
+
+    try {
+        const animeResponse = await fetch('./tv_list_imdb.json');
+        animeDatabase = await animeResponse.json();
+        console.log("📺 Anime Series Loaded Successfully. Size:", Object.keys(animeDatabase).length);
+    } catch (err) {
+        console.error("Critical parse block crash tracking structural initialization parameters on Anime JSON file:", err);
     }
 }
 
@@ -99,6 +145,7 @@ window.showDetails = (anime) => {
     hideAll();
     window.currentAnime = anime;
     const content = document.getElementById("details-content");
+    if (!content) return;
 
     const title = anime.title_english || anime.title || anime.name;
     const bannerImg = anime.images?.jpg?.large_image_url || anime.poster_url || anime.poster;
@@ -148,42 +195,27 @@ window.showDetails = (anime) => {
 };
 
 window.watchNow = (anime) => {
-    const malIdKey = String(anime.mal_id);
-    const mapping = animeIdLookupTable[malIdKey];
-
-    if (!mapping) {
-        alert("This selection hasn't been cross-referenced inside anime_ids.json yet.");
-        return;
-    }
-
-    const trackingId = mapping.imdbId || mapping.tmdbShowId || mapping.tmdbMovieId || mapping.tvdbId;
-    
-    if (!trackingId) {
-        alert("No valid structural playback code could be derived for this card.");
-        return;
-    }
+    window.currentAnime = anime;
 
     hideAll();
     document.getElementById("player-view").hidden = false;
     
-    const player = document.getElementById("anime-player");
     const titleHeader = document.getElementById("now-watching-title");
     const title = anime.title_english || anime.title;
-
-    const isTv = anime.type ? (anime.type.toLowerCase() !== "movie") : true;
-    const season = 1;
-    const episode = 1;
-
-    if (!isTv) {
-        player.src = `https://vaplayer.ru/embed/movie/${trackingId}`; 
-    } else {
-        player.src = `https://vaplayer.ru/embed/tv/${trackingId}/${season}/${episode}`;
-    }
 
     if (titleHeader) {
         titleHeader.innerText = `Streaming: ${title}`;
     }
-    console.log(`🎬 Video Stream Frame Fired: ${player.src}`);
+
+    playRealEpisode(title, 1);
+    
+    const isTv = anime.type ? (anime.type.toLowerCase() !== "movie") : true;
+    if (isTv) {
+        fetchAnimeDetails(anime.mal_id, title);
+    } else {
+        const epListContainer = document.getElementById("episode-list");
+        if (epListContainer) epListContainer.innerHTML = ""; 
+    }
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -201,7 +233,6 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
             const response = await fetch(url);
             const result = await response.json();
-
             renderGrid(target, result.data || []); 
         } catch (e) {
             console.error("Jikan Endpoint Fetch Failure:", e);
@@ -235,30 +266,31 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    // LIVE JIKAN SEARCH pipeline mapping
-    searchBtn.onclick = async () => {
-        const query = encodeURIComponent(searchInput.value.trim());
-        if (!query) return;
+    if (searchBtn && searchInput) {
+        searchBtn.onclick = async () => {
+            const query = encodeURIComponent(searchInput.value.trim());
+            if (!query) return;
 
-        if (searchGrid) {
-            searchGrid.innerHTML = "<p style='color:white;'>Querying live indices...</p>";
-        }
-
-        try {
-            const response = await fetch(`https://api.jikan.moe/v4/anime?q=${query}&limit=20`);
-            const result = await response.json();
-            renderGrid(searchGrid, result.data); 
-        } catch (e) {
-            console.error("Search Error:", e);
             if (searchGrid) {
-                searchGrid.innerHTML = "<p style='color:var(--red);'>Gateway connection timeout.</p>";
+                searchGrid.innerHTML = "<p style='color:white;'>Querying live indices...</p>";
             }
-        }
-    };
+
+            try {
+                const response = await fetch(`https://api.jikan.moe/v4/anime?q=${query}&limit=20`);
+                const result = await response.json();
+                renderGrid(searchGrid, result.data); 
+            } catch (e) {
+                console.error("Search Error:", e);
+                if (searchGrid) {
+                    searchGrid.innerHTML = "<p style='color:var(--red);'>Gateway connection timeout.</p>";
+                }
+            }
+        };
+    }
     
     async function initHome() {
-        await fetchAndRender("https://api.jikan.moe/v4/top/anime?type=movie&limit=15", moviesGrid);
         await fetchAndRender("https://api.jikan.moe/v4/top/anime?type=tv&filter=airing&limit=15", showsGrid);
+        await fetchAndRender("https://api.jikan.moe/v4/top/anime?type=movie&limit=15", moviesGrid);
     }
 
     initHome();
@@ -266,7 +298,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.help = () => {
     hideAll();
-    document.getElementById("help").hidden = false;
+    const helpEl = document.getElementById("help");
+    if (helpEl) helpEl.hidden = false;
     
     const days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday'];
     const today = days[new Date().getDay()]; 
@@ -276,7 +309,6 @@ window.help = () => {
 
 async function loadSchedule(day) {
     const tableBody = document.getElementById("schedule-body");
-    
     if (!tableBody) return;
 
     tableBody.innerHTML = "<tr><td colspan='2' style='color:white; padding:20px;'>Loading...</td></tr>";
@@ -288,7 +320,6 @@ async function loadSchedule(day) {
     try {
         const res = await fetch(`https://api.jikan.moe/v4/schedules?filter=${day}`);
         const result = await res.json();
-        
         renderScheduleTable(result.data); 
     } catch (err) {
         tableBody.innerHTML = "<tr><td colspan='2' class='red-text'>Failed to load. Try again!</td></tr>";
@@ -297,6 +328,7 @@ async function loadSchedule(day) {
 
 function renderScheduleTable(list) {
     const tableBody = document.getElementById("schedule-body");
+    if (!tableBody) return;
     tableBody.innerHTML = ""; 
 
     if (!list || list.length === 0) {
@@ -307,7 +339,6 @@ function renderScheduleTable(list) {
     list.forEach(anime => {
         const row = document.createElement("tr");
         row.className = "schedule-row";
-        
         row.onclick = () => showDetails(anime);
 
         row.innerHTML = `
@@ -319,7 +350,6 @@ function renderScheduleTable(list) {
                 <div class="anime-ep">EP: ${anime.episodes || '??'}</div>
             </td>
         `;
-        
         tableBody.appendChild(row);
     });
 }
