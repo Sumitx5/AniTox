@@ -4,120 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="stylesheet" href="src/index.css">
+    <link rel="stylesheet" href="assets/css/main.css">
     <title>AniTox | Official</title>
 </head>
 <body>
-
+    <!-- Desktop Header -->
     <header class="main-header">
-        <div class="logo"><span class="red-text">Ani</span>Tox</div>
+        <a href="./" class="logo">
+            <span class="logo-accent">ANI</span>TOX
+        </a>
+
         <nav class="desktop-nav">
-            <a href="javascript:void(0)" onclick="home()">Home</a>
-            <a href="javascript:void(0)" onclick="searchAnim()">Search</a>
-            <a href="javascript:void(0)" onclick="help()">Help</a>
+            <a href="./" class="active">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Home</span>
+            </a>
+
+            <a href="search/">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>Search</span>
+            </a>
+
+            <a href="help/">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span>Help</span>
+            </a>
         </nav>
     </header>
-            <!-- home -->
-    <div class="container">
-        <section id="home">
 
-            <h1 class="section-title">Latest <span class="red-text">Shows</span></h1>
-            <div class="scroll-container">
-                <div id="shows-anime-grid" class="anime-grid scroll-grid">
-                    </div>
-            </div>
+    <!-- Main Data -->
+    <main class="container">
+        <div class="spotlight" id="spotlight-carousel"></div>
 
-            <h1 class="section-title">Latest <span class="red-text">Movies</span></h1>
-            <div class="scroll-container">
-                <div id="movies-anime-grid" class="anime-grid scroll-grid">
-                    </div>
-            </div>
-            
-        </section>
-            <!-- search -->
-        <section id="search" hidden>
-            <div class="search-container">
-                <div class="search-bar">
-                    <input type="text" id="query_search" placeholder="Search anime names...">
-                    <button id="done">🔍</button>
-                </div>
-            </div>
-            <div id="search-anime-grid" class="anime-grid"></div>
-        </section>
-        <!-- details -->
-        <div id="details" class="details-view" hidden>
-            <div class="back-nav">
-                <button onclick="home()" class="back-btn">← Back to Home</button>
-            </div>
-            <p id="anime-rating"></p>
-            <main id="details-content" class="details-container">
-            </main>
-
-            <div class="overview-container">
-                <h3>Overview:</h3>
-                <div class="scroll-box">
-                    <p id="anime-synopsis">
-                        the greatest treasure in the world, One Piece...
-                    </p>
-                </div>
+        <div class="card-container">
+            <h2 class="card-title"> <span class="red-text">Trending</span> This Week</h2>
+            <div class="cards-h">
+                <div class="anime-cards" id="trending_this_week"></div>
             </div>
         </div>
 
-        <!-- player -->
-            <div id="player-view" hidden>
-                <h2 id="now-watching-title">Select an Episode</h2>
-                
-                <div class="video-wrapper">
-                    <iframe 
-                        id="anime-player" 
-                        src="" 
-                        frameborder="0" 
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen>
-                    </iframe>
-                </div>
-
-                <div id="episode-list"></div>
+        <div class="card-container">
+            <h2 class="card-title">Top<span class="red-text"> TV Anime</span></h2>
+            <div class="cards-h">
+                <div class="anime-cards" id="top_anime"></div>
             </div>
-        <!-- player -->
+        </div>
 
-
-        <section id="help" hidden>
-            <div class="help-content">
-                
-                <h2>Anime <span class="red-text">Schedule</span></h2>
-                
-                <div class="schedule-tabs">
-                    <button onclick="loadSchedule('monday')">Mon</button>
-                    <button onclick="loadSchedule('tuesday')">Tue</button>
-                    <button onclick="loadSchedule('wednesday')">Wed</button>
-                    <button onclick="loadSchedule('thursday')">Thu</button>
-                    <button onclick="loadSchedule('friday')">Fri</button>
-                    <button onclick="loadSchedule('saturday')">Sat</button>
-                    <button onclick="loadSchedule('sunday')">Sun</button>
-                </div>
-
-                <div id="schedule-grid">
-                    <table class="schedule-table">
-                        <tbody id="schedule-body"></tbody>
-                    </table>
-                </div>
-                <h2>Help <span class="red-text">Center</span></h2>
-                <h2>Note: </h2>
-                <p>This Website Uses API to show all content on the Page <br> API USED: Jikan API & VIDAPI(vidapi.ru)</p>
-
+        <div class="card-container">
+            <h2 class="card-title"><span class="red-text">Top</span> Anime Movies</h2>
+            <div class="cards-h">
+                <div class="anime-cards" id="top_anime_movies"></div>
             </div>
-        </section>
+        </div>
 
-    </div>
+        <div class="card-container">
+            <h2 class="card-title"><span class="red-text">New Season</span> Arrivals</h2>
+            <div class="cards-h">
+                <div class="anime-cards" id="new_season_arrivals"></div>
+            </div>
+        </div>
 
+        <div class="card-container">
+            <h2 class="card-title"><span class="red-text">Action</span> Zone</h2>
+            <div class="cards-h">
+                <div class="anime-cards" id="action_zone"></div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <h2 class="card-title"><span class="red-text">Romance & Drama</span></h2>
+            <div class="cards-h">
+                <div class="anime-cards" id="romance_drama"></div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <h2 class="card-title"><span class="red-text">Highest Rated</span> Gems</h2>
+            <div class="cards-h">
+                <div class="anime-cards" id="high_rated_gems"></div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Nav Bar -->
     <nav class="bottom-nav">
-        <a href="javascript:void(0)" onclick="home()">🏠<span>Home</span></a>
-        <a href="javascript:void(0)" onclick="searchAnim()">🔍<span>Search</span></a>
-        <a href="javascript:void(0)" onclick="help()">❓<span>Help</span></a>
+        <a href="./" class="active">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Home</span>
+        </a>
+
+        <a href="search/">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search</span>
+        </a>
+
+        <a href="help/">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <span>Help</span>
+        </a>
     </nav>
 
-    <script src="src/main.js"></script>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-links">
+            <a href="help/terms/">Terms</a>
+            <a href="help/services/">Services</a>
+        </div>
+        <p class="copyright">© 2026 TOKITO'S WORLD. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
 </body>
 </html>

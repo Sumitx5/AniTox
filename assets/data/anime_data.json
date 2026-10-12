@@ -1,0 +1,519 @@
+{
+  "spotlight": [
+    {
+      "id": "212888",
+      "title": "Overgeared",
+      "image_title": "https://image.tmdb.org/t/p/original/ki2DwqPbI2LcWeOQrq7dtaDIHFB.png",
+      "image_horizontal": "https://cdn.myanimelist.net/images/anime/1292/160023l.jpg",
+      "image": "https://cdn.myanimelist.net/images/anime/1810/139965l.jpg"
+    },
+    {
+      "id": "21",
+      "title": "ONE PIECE",
+      "image_title": "https://image.tmdb.org/t/p/original/9F7daAmibx8ZHTE17CdM5FAwiHE.png",
+      "image_horizontal": "https://images3.alphacoders.com/134/thumb-1920-1342304.jpeg",
+      "image": "https://cdn.myanimelist.net/images/anime/1810/139965l.jpg"
+    },
+    {
+      "id": "97940",
+      "title": "Black Clover",
+      "image_horizontal": "https://images6.alphacoders.com/871/thumb-1920-871206.png",
+      "image_title": "https://image.tmdb.org/t/p/original/j9ZZ7WV5pwLLXbbebyGdMUxbqrc.png"
+    },
+    {
+      "id": "57181",
+      "title": "Blue Box",
+      "image_horizontal": "https://cdn.myanimelist.net/images/manga/3/243348l.jpg",
+      "image_title": "https://image.tmdb.org/t/p/original/ubw6k78dv5SU9y9JoHRkBW8pGuN.png"
+    },
+    {
+      "id": "63367",
+      "title": "Dragon Ball Super: Beerus",
+      "image_horizontal": "https://images2.alphacoders.com/709/thumb-1920-709109.jpg",
+      "image_title": "https://image.tmdb.org/t/p/original/aFlyMKCE5hAR0OyUSMSbihFHgif.png"
+    }
+  ],
+  "trending_this_week": [
+    {
+      "id": "212888",
+      "title": "Overgeared",
+      "type": "ONA",
+      "rating": 7.5,
+      "image": "https://cdn.myanimelist.net/images/anime/1386/160022l.jpg"
+    },
+    {
+      "id": "206814",
+      "title": "Dragon Ball Super: Beerus",
+      "type": "TV",
+      "rating": null,
+      "image": "https://cdn.myanimelist.net/images/anime/1015/155108l.jpg"
+    },
+    {
+      "id": "60383",
+      "title": "Black Clover Season 2",
+      "type": "TV",
+      "rating": 8.7,
+      "image": "https://cdn.myanimelist.net/images/anime/1954/160282l.jpg"
+    },
+    {
+      "id": "21",
+      "title": "ONE PIECE",
+      "type": "TV",
+      "rating": 8.7,
+      "image": "https://cdn.myanimelist.net/images/anime/1810/139965l.jpg"
+    },
+    {
+      "id": "60417",
+      "title": "Blue Box Season 2",
+      "type": "TV",
+      "rating": 8.0,
+      "image": "https://cdn.myanimelist.net/images/anime/1976/156319l.jpg"
+    },
+    {
+      "id": "58652",
+      "title": "Reborn as a Space Mercenary: I Woke Up with a Strongest Spaceship and a Cute Girl",
+      "type": "TV",
+      "rating": 6.8,
+      "image": "https://cdn.myanimelist.net/images/anime/1090/144510l.jpg"
+    },
+    {
+      "id": "63509",
+      "title": "I'm Dating a Dark Summoner",
+      "type": "TV_SHORT",
+      "rating": 6.8,
+      "image": "https://cdn.myanimelist.net/images/anime/1169/145892l.jpg"
+    },
+    {
+      "id": "57786",
+      "title": "Full Clearing Another World under a Goddess with Zero Believers",
+      "type": "TV",
+      "rating": null,
+      "image": "https://cdn.myanimelist.net/images/anime/1172/145610l.jpg"
+    },
+    {
+      "id": "59985",
+      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 2",
+      "type": "TV",
+      "rating": 7.1,
+      "image": "https://cdn.myanimelist.net/images/anime/1649/145802l.jpg"
+    },
+    {
+      "id": "34572",
+      "title": "Black Clover",
+      "type": "TV",
+      "rating": 7.9,
+      "image": "https://cdn.myanimelist.net/images/anime/2/88336l.jpg"
+    }
+  ],
+  "top_anime_movies": [
+    {
+      "id": "39486",
+      "title": "Gintama: The Final",
+      "type": "Movie",
+      "rating": 9.05,
+      "image": "https://cdn.myanimelist.net/images/anime/1245/116760l.jpg"
+    },
+    {
+      "id": "28851",
+      "title": "Koe no Katachi",
+      "type": "Movie",
+      "rating": 8.93,
+      "image": "https://cdn.myanimelist.net/images/anime/1122/96481l.jpg"
+    },
+    {
+      "id": "15335",
+      "title": "Gintama Movie 2: Kanketsu-hen - Yorozuya yo Eien Nare",
+      "type": "Movie",
+      "rating": 8.89,
+      "image": "https://cdn.myanimelist.net/images/anime/10/51723l.jpg"
+    },
+    {
+      "id": "59620",
+      "title": "Shingeki no Kyojin Movie: Kanketsu-hen - The Last Attack",
+      "type": "Movie",
+      "rating": 8.84,
+      "image": "https://cdn.myanimelist.net/images/anime/1879/145887l.jpg"
+    },
+    {
+      "id": "37987",
+      "title": "Violet Evergarden Movie",
+      "type": "Movie",
+      "rating": 8.83,
+      "image": "https://cdn.myanimelist.net/images/anime/1825/110716l.jpg"
+    },
+    {
+      "id": "32281",
+      "title": "Kimi no Na wa.",
+      "type": "Movie",
+      "rating": 8.82,
+      "image": "https://cdn.myanimelist.net/images/anime/1935/127974l.jpg"
+    },
+    {
+      "id": "59846",
+      "title": "Gintama Movie 3: Yoshiwara Daienjou",
+      "type": "Movie",
+      "rating": 8.79,
+      "image": "https://cdn.myanimelist.net/images/anime/1458/146032l.jpg"
+    }
+  ],
+  "top_anime": [
+    {
+      "id": "52991",
+      "title": "Sousou no Frieren",
+      "type": "TV",
+      "rating": 9.24,
+      "image": "https://cdn.myanimelist.net/images/anime/1015/138075l.jpg"
+    },
+    {
+      "id": "5114",
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "type": "TV",
+      "rating": 9.11,
+      "image": "https://cdn.myanimelist.net/images/anime/1208/94745l.jpg"
+    },
+    {
+      "id": "58514",
+      "title": "Re:Zero kara Hajimeru Isekai Seikatsu 4th Season",
+      "type": "TV",
+      "rating": 9.10,
+      "image": "https://cdn.myanimelist.net/images/anime/1898/146193l.jpg"
+    },
+    {
+      "id": "9253",
+      "title": "Steins;Gate",
+      "type": "TV",
+      "rating": 9.07,
+      "image": "https://cdn.myanimelist.net/images/anime/1935/127974l.jpg"
+    },
+    {
+      "id": "28977",
+      "title": "Gintama°",
+      "type": "TV",
+      "rating": 9.05,
+      "image": "https://cdn.myanimelist.net/images/anime/3/72078l.jpg"
+    },
+    {
+      "id": "38524",
+      "title": "Shingeki no Kyojin Season 3 Part 2",
+      "type": "TV",
+      "rating": 9.05,
+      "image": "https://cdn.myanimelist.net/images/anime/1517/100633l.jpg"
+    },
+    {
+      "id": "11061",
+      "title": "Hunter x Hunter (2011)",
+      "type": "TV",
+      "rating": 9.03,
+      "image": "https://cdn.myanimelist.net/images/anime/1337/99013l.jpg"
+    },
+    {
+      "id": "9969",
+      "title": "Gintama'",
+      "type": "TV",
+      "rating": 9.02,
+      "image": "https://cdn.myanimelist.net/images/anime/4/50361l.jpg"
+    },
+    {
+      "id": "15417",
+      "title": "Gintama': Enchousen",
+      "type": "TV",
+      "rating": 9.02,
+      "image": "https://cdn.myanimelist.net/images/anime/1452/123686l.jpg"
+    },
+    {
+      "id": "59978",
+      "title": "Bleach: Sennen Kessen-hen - Kashin-tan",
+      "type": "TV",
+      "rating": 9.01,
+      "image": "https://cdn.myanimelist.net/images/anime/1908/146031l.jpg"
+    }
+  ],
+  "new_season_arrivals": [
+    {
+      "id": "212888",
+      "title": "Overgeared",
+      "type": "ONA",
+      "rating": 7.5,
+      "image": "https://cdn.myanimelist.net/images/anime/1386/160022l.jpg"
+    },
+    {
+      "id": "206814",
+      "title": "Dragon Ball Super: Beerus",
+      "type": "TV",
+      "rating": null,
+      "image": "https://cdn.myanimelist.net/images/anime/1015/155108l.jpg"
+    },
+    {
+      "id": "60383",
+      "title": "Black Clover Season 2",
+      "type": "TV",
+      "rating": 8.7,
+      "image": "https://cdn.myanimelist.net/images/anime/1954/160282l.jpg"
+    },
+    {
+      "id": "60417",
+      "title": "Blue Box Season 2",
+      "type": "TV",
+      "rating": 8.0,
+      "image": "https://cdn.myanimelist.net/images/anime/1976/156319l.jpg"
+    },
+    {
+      "id": "58652",
+      "title": "Reborn as a Space Mercenary: I Woke Up with a Strongest Spaceship and a Cute Girl",
+      "type": "TV",
+      "rating": 6.8,
+      "image": "https://cdn.myanimelist.net/images/anime/1090/144510l.jpg"
+    },
+    {
+      "id": "63509",
+      "title": "I'm Dating a Dark Summoner",
+      "type": "TV_SHORT",
+      "rating": 6.8,
+      "image": "https://cdn.myanimelist.net/images/anime/1169/145892l.jpg"
+    },
+    {
+      "id": "57786",
+      "title": "Full Clearing Another World under a Goddess with Zero Believers",
+      "type": "TV",
+      "rating": null,
+      "image": "https://cdn.myanimelist.net/images/anime/1172/145610l.jpg"
+    },
+    {
+      "id": "59985",
+      "title": "As a Reincarnated Aristocrat, I'll Use My Appraisal Skill to Rise in the World Season 2",
+      "type": "TV",
+      "rating": 7.1,
+      "image": "https://cdn.myanimelist.net/images/anime/1649/145802l.jpg"
+    },
+    {
+      "id": "51179",
+      "title": "Mushoku Tensei: Jobless Reincarnation Season 2",
+      "type": "TV",
+      "rating": 8.6,
+      "image": "https://cdn.myanimelist.net/images/anime/1665/136706l.jpg"
+    },
+    {
+      "id": "59228",
+      "title": "Even the Student Council Has Holes!",
+      "type": "TV",
+      "rating": 7.3,
+      "image": "https://cdn.myanimelist.net/images/anime/1848/145919l.jpg"
+    }
+  ],
+  "action_zone": [
+    {
+      "id": "212888",
+      "title": "Overgeared",
+      "type": "ONA",
+      "rating": 7.5,
+      "image": "https://cdn.myanimelist.net/images/anime/1386/160022l.jpg"
+    },
+    {
+      "id": "206814",
+      "title": "Dragon Ball Super: Beerus",
+      "type": "TV",
+      "rating": null,
+      "image": "https://cdn.myanimelist.net/images/anime/1015/155108l.jpg"
+    },
+    {
+      "id": "60383",
+      "title": "Black Clover Season 2",
+      "type": "TV",
+      "rating": 8.7,
+      "image": "https://cdn.myanimelist.net/images/anime/1954/160282l.jpg"
+    },
+    {
+      "id": "21",
+      "title": "ONE PIECE",
+      "type": "TV",
+      "rating": 8.7,
+      "image": "https://cdn.myanimelist.net/images/anime/1810/139965l.jpg"
+    },
+    {
+      "id": "58652",
+      "title": "Reborn as a Space Mercenary: I Woke Up with a Strongest Spaceship and a Cute Girl",
+      "type": "TV",
+      "rating": 6.8,
+      "image": "https://cdn.myanimelist.net/images/anime/1090/144510l.jpg"
+    },
+    {
+      "id": "34572",
+      "title": "Black Clover",
+      "type": "TV",
+      "rating": 7.9,
+      "image": "https://cdn.myanimelist.net/images/anime/2/88336l.jpg"
+    },
+    {
+      "id": "16498",
+      "title": "Attack on Titan",
+      "type": "TV",
+      "rating": 8.5,
+      "image": "https://cdn.myanimelist.net/images/anime/10/47347l.jpg"
+    },
+    {
+      "id": "38000",
+      "title": "Demon Slayer: Kimetsu no Yaiba",
+      "type": "TV",
+      "rating": 8.2,
+      "image": "https://cdn.myanimelist.net/images/anime/1286/99889l.jpg"
+    },
+    {
+      "id": "40748",
+      "title": "JUJUTSU KAISEN",
+      "type": "TV",
+      "rating": 8.4,
+      "image": "https://cdn.myanimelist.net/images/anime/1171/109222l.jpg"
+    },
+    {
+      "id": "31964",
+      "title": "My Hero Academia",
+      "type": "TV",
+      "rating": 7.7,
+      "image": "https://cdn.myanimelist.net/images/anime/10/78745l.jpg"
+    }
+  ],
+  "romance_drama": [
+    {
+      "id": "21",
+      "title": "ONE PIECE",
+      "type": "TV",
+      "rating": 8.7,
+      "image": "https://cdn.myanimelist.net/images/anime/1810/139965l.jpg"
+    },
+    {
+      "id": "60417",
+      "title": "Blue Box Season 2",
+      "type": "TV",
+      "rating": 8.0,
+      "image": "https://cdn.myanimelist.net/images/anime/1976/156319l.jpg"
+    },
+    {
+      "id": "58652",
+      "title": "Reborn as a Space Mercenary: I Woke Up with a Strongest Spaceship and a Cute Girl",
+      "type": "TV",
+      "rating": 6.8,
+      "image": "https://cdn.myanimelist.net/images/anime/1090/144510l.jpg"
+    },
+    {
+      "id": "63509",
+      "title": "I'm Dating a Dark Summoner",
+      "type": "TV_SHORT",
+      "rating": 6.8,
+      "image": "https://cdn.myanimelist.net/images/anime/1169/145892l.jpg"
+    },
+    {
+      "id": "51179",
+      "title": "Mushoku Tensei: Jobless Reincarnation Season 2",
+      "type": "TV",
+      "rating": 8.6,
+      "image": "https://cdn.myanimelist.net/images/anime/1665/136706l.jpg"
+    },
+    {
+      "id": "16498",
+      "title": "Attack on Titan",
+      "type": "TV",
+      "rating": 8.5,
+      "image": "https://cdn.myanimelist.net/images/anime/10/47347l.jpg"
+    },
+    {
+      "id": "38000",
+      "title": "Demon Slayer: Kimetsu no Yaiba",
+      "type": "TV",
+      "rating": 8.2,
+      "image": "https://cdn.myanimelist.net/images/anime/1286/99889l.jpg"
+    },
+    {
+      "id": "40748",
+      "title": "JUJUTSU KAISEN",
+      "type": "TV",
+      "rating": 8.4,
+      "image": "https://cdn.myanimelist.net/images/anime/1171/109222l.jpg"
+    },
+    {
+      "id": "22319",
+      "title": "Tokyo Ghoul",
+      "type": "TV",
+      "rating": 7.6,
+      "image": "https://cdn.myanimelist.net/images/anime/5/64449l.jpg"
+    },
+    {
+      "id": "25777",
+      "title": "Attack on Titan Season 2",
+      "type": "TV",
+      "rating": 8.5,
+      "image": "https://cdn.myanimelist.net/images/anime/4/84177l.jpg"
+    }
+  ],
+  "high_rated_gems": [
+    {
+      "id": "52991",
+      "title": "Frieren: Beyond Journey's End",
+      "type": "TV",
+      "rating": 9.1,
+      "image": "https://cdn.myanimelist.net/images/anime/1015/138075l.jpg"
+    },
+    {
+      "id": "39486",
+      "title": "Gintama: THE VERY FINAL",
+      "type": "Movie",
+      "rating": 9.0,
+      "image": "https://cdn.myanimelist.net/images/anime/1245/116760l.jpg"
+    },
+    {
+      "id": "28977",
+      "title": "Gintama Season 3",
+      "type": "TV",
+      "rating": 9.0,
+      "image": "https://cdn.myanimelist.net/images/anime/3/72078l.jpg"
+    },
+    {
+      "id": "58514",
+      "title": "Re:ZERO -Starting Life in Another World- Season 3",
+      "type": "TV",
+      "rating": 9.0,
+      "image": "https://cdn.myanimelist.net/images/anime/1898/146193l.jpg"
+    },
+    {
+      "id": "57334",
+      "title": "Chainsaw Man – The Movie: Reze Arc",
+      "type": "Movie",
+      "rating": 9.0,
+      "image": "https://cdn.myanimelist.net/images/anime/1063/140889l.jpg"
+    },
+    {
+      "id": "5114",
+      "title": "Fullmetal Alchemist: Brotherhood",
+      "type": "TV",
+      "rating": 9.0,
+      "image": "https://cdn.myanimelist.net/images/anime/1208/94745l.jpg"
+    },
+    {
+      "id": "38524",
+      "title": "Attack on Titan Season 3 Part 2",
+      "type": "TV",
+      "rating": 8.9,
+      "image": "https://cdn.myanimelist.net/images/anime/1517/100633l.jpg"
+    },
+    {
+      "id": "59978",
+      "title": "BLEACH: Thousand-Year Blood War - The Conflict",
+      "type": "TV",
+      "rating": 8.9,
+      "image": "https://cdn.myanimelist.net/images/anime/1908/146031l.jpg"
+    },
+    {
+      "id": "59979",
+      "title": "ONE PIECE FAN LETTER",
+      "type": "Special",
+      "rating": 8.9,
+      "image": "https://cdn.myanimelist.net/images/anime/1739/145952l.jpg"
+    },
+    {
+      "id": "42938",
+      "title": "Fruits Basket The Final Season",
+      "type": "TV",
+      "rating": 8.9,
+      "image": "https://cdn.myanimelist.net/images/anime/1085/114792l.jpg"
+    }
+  ]
+}
