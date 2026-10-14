@@ -8,7 +8,6 @@ function renderSpotlight(spotlightList) {
     const slidesHTML = spotlightList.map((item, index) => {
         const bgImg = item.image_horizontal || item.image;
        
-        // Checks image_title (or iamge_title just in case of mixed keys in JSON)
         const logoUrl = item.image_title || item.iamge_title;
         const titleContent = logoUrl 
             ? `<img src="${logoUrl}" alt="${item.title}" class="spotlight-title-img" />`
@@ -73,7 +72,7 @@ function createCardHTML(anime) {
     const type = anime.type || 'TV';
 
     return `
-        <a href="watch/?id=${encodeURIComponent(anime.id)}" class="anime-card" data-id="${anime.id}">
+        <a href="anime/?id=${encodeURIComponent(anime.id)}" class="anime-card" data-id="${anime.id}">
             <img 
                 src="${anime.image}" 
                 alt="${anime.title}" 
@@ -104,12 +103,10 @@ async function loadAnimeCatalog() {
 
         const data = await res.json();
 
-        // 1. Render Spotlight
         if (data.spotlight) {
             renderSpotlight(data.spotlight);
         }
 
-        // 2. Render Categories cleanly with a lookup map
         const categories = [
             'trending_this_week',
             'top_anime',
@@ -118,8 +115,8 @@ async function loadAnimeCatalog() {
             'action_zone',
             'romance_drama',
             'high_rated_gems',
-            'shows',          // fallback if present in JSON
-            'movies'          // fallback if present in JSON
+            'shows',          
+            'movies'         
         ];
 
         categories.forEach(category => {

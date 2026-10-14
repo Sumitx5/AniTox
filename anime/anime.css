@@ -1,0 +1,333 @@
+.anime-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.anime-cover-h {
+    position: relative;
+    width: 100%;
+    height: 52vh;
+    min-height: 340px;
+    max-height: 560px;
+    overflow: hidden;
+    background: #000;
+}
+
+.backdrop-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 25%;
+    filter: brightness(0.75);
+}
+
+.cover-gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(5, 5, 5, 0.2) 0%,
+        rgba(5, 5, 5, 0.75) 60%,
+        var(--bg) 100%
+    );
+}
+
+/* 2. Frosted Floating Info Card */
+.anime-data {
+    position: relative;
+    max-width: 1200px;
+    margin: -140px auto 0;
+    padding: 36px 40px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    box-shadow: var(--glass-shadow), var(--glass-highlight);
+    z-index: 10;
+}
+
+.container-h {
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+}
+
+/* Left Vertical Poster & Play Button */
+.poster-column {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.anime-cover-v {
+    width: 100%;
+    aspect-ratio: 2/3;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.6), var(--glass-highlight);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.poster-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.btn-play-ep1 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 13px 18px;
+    border-radius: 12px;
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: #fff;
+    text-decoration: none;
+    background: linear-gradient(135deg, var(--red) 0%, #b30000 100%);
+    box-shadow: 0 4px 18px var(--red-glow);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-play-ep1:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px var(--red-glow);
+}
+
+/* Right Details Column */
+.details-column {
+    flex: 1;
+}
+
+.anime-title {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    font-weight: 900;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 14px;
+}
+
+.badge-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.rating-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #ffc107;
+    background: rgba(255, 193, 7, 0.12);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.meta-pill {
+    padding: 4px 12px;
+    border-radius: 9999px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+}
+
+.genres-row {
+    color: var(--text-dim);
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 18px;
+    letter-spacing: 0.02em;
+}
+
+.genres-row span {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.anime-description {
+    color: var(--gray-text);
+    font-size: 0.95rem;
+    line-height: 1.7;
+    margin: 0;
+}
+
+/* Divider Line */
+.glass-divider {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+    margin: 32px 0 28px;
+}
+
+/* 3. Episodes Section */
+.episodes-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+}
+
+.episodes-heading {
+    font-size: 1.35rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+/* Frosted Range Dropdown */
+.drop-down-selector select {
+    appearance: none;
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--glass-border);
+    color: var(--text);
+    padding: 8px 36px 8px 16px;
+    border-radius: 12px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.25s ease;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+}
+
+.drop-down-selector select:hover,
+.drop-down-selector select:focus {
+    border-color: rgba(255, 0, 0, 0.45);
+    box-shadow: 0 0 14px var(--red-glow);
+}
+
+.drop-down-selector select option {
+    background: #111;
+    color: #fff;
+}
+
+/* Scrollable Episode Box (shows ~6, scrolls down for more) */
+.episode-slider {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    max-height: 310px;
+    overflow-y: auto;
+    padding-right: 6px;
+}
+
+.episode-slider::-webkit-scrollbar {
+    width: 6px;
+}
+
+.episode-slider::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+}
+
+.episode-slider::-webkit-scrollbar-thumb {
+    background: var(--glass-border);
+    border-radius: 10px;
+}
+
+.episode-slider::-webkit-scrollbar-thumb:hover {
+    background: var(--red);
+}
+
+/* Individual Frosted Episode Pill */
+.episode-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 18px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.episode-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(255, 0, 0, 0.35);
+    transform: translateX(4px);
+}
+
+.episode-card.active {
+    background: rgba(255, 0, 0, 0.14);
+    border-color: rgba(255, 0, 0, 0.45);
+    box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.15);
+}
+
+.ep-num {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--red);
+    min-width: 65px;
+}
+
+.ep-title {
+    flex: 1;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--text);
+    padding: 0 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ep-duration {
+    font-size: 0.78rem;
+    color: var(--text-dim);
+}
+
+@media (max-width: 991px) {
+    .anime-cover-h {
+        height: 38vh;
+        min-height: 260px;
+    }
+
+    .anime-data {
+        margin: -80px 4% 0;
+        padding: 24px 20px;
+        border-radius: 20px;
+    }
+
+    .container-h {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .poster-column {
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        width: 100%;
+    }
+
+    .anime-cover-v {
+        width: 100px;
+        flex-shrink: 0;
+    }
+
+    .btn-play-ep1 {
+        flex: 1;
+        padding: 12px 16px;
+    }
+
+    .anime-title {
+        font-size: 1.7rem;
+    }
+}

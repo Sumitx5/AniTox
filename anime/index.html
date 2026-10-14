@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AniTox — Loading...</title>
+    <link rel="icon" type="image/png" href="../favicon.png">
+    <link rel="stylesheet" href="../assets/css/main.css">
+    <link rel="stylesheet" href="anime.css">
+</head>
+<body>
+    <header class="main-header">
+        <a href="../" class="logo">
+            <span class="logo-accent">ANI</span>TOX
+        </a>
+
+        <nav class="desktop-nav">
+            <a href="../">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                </svg>
+                <span>Home</span>
+            </a>
+
+            <a href="../search/">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                </svg>
+                <span>Search</span>
+            </a>
+
+            <a href="../help/">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                </svg>
+                <span>Help</span>
+            </a>
+        </nav>
+    </header>
+
+    <div class="anime-container">
+        <!-- 1. Horizontal Backdrop Cover with Gradient Bleed -->
+        <div class="anime-cover-h">
+            <img src="" alt="Backdrop" class="backdrop-img">
+            <div class="cover-gradient-overlay"></div>
+        </div>
+
+        <!-- 2. Main Frosted Content Card -->
+        <div class="anime-data">
+            <div class="container-h">
+                <!-- Left Poster & Play Button -->
+                <div class="poster-column">
+                    <div class="anime-cover-v">
+                        <img src="" alt="Poster" class="poster-img">
+                    </div>
+                    <a href="#play-ep1" class="btn-play-ep1" id="btn-watch-now">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                        </svg>
+                        <span>Play Episode 1</span>
+                    </a>
+                </div>
+
+                <!-- Right Details & Meta -->
+                <div class="details-column">
+                    <h1 class="anime-title">Loading...</h1>
+                    
+                    <div class="badge-row">
+                        <span class="rating-badge"></span>
+                    </div>
+
+                    <div class="genres-row"></div>
+
+                    <p class="anime-description"></p>
+                </div>
+            </div>
+
+            <hr class="glass-divider">
+
+            <!-- 3. Episode Selector & Scroll Container -->
+            <div class="anime-episodes">
+                <div class="episodes-header">
+                    <h2 class="episodes-heading">Episodes</h2>
+                    
+                    <div class="drop-down-selector">
+                        <select id="range-select" aria-label="Select Episode Range"></select>
+                    </div>
+                </div>
+
+                <!-- Dynamically populated by anime.js -->
+                <div class="episode-slider" id="episode-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile Nav Bar -->
+    <nav class="bottom-nav">
+        <a href="../" class="active">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+            </svg>
+            <span>Home</span>
+        </a>
+
+        <a href="../search/">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <span>Search</span>
+        </a>
+
+        <a href="../help/">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
+                <line x1="12" y1="17" x2="12.01" y2="17"></line>
+            </svg>
+            <span>Help</span>
+        </a>
+    </nav>
+
+    <footer>
+        <div class="footer-links">
+            <a href="../help/terms/">Terms</a>
+            <a href="../help/services/">Services</a>
+        </div>
+        <p class="copyright">© 2026 TOKITO'S WORLD. ALL RIGHTS RESERVED.</p>
+    </footer>
+    <script src="anime.js"></script>
+</body>
+</html>
