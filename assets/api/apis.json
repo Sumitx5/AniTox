@@ -1,4 +1,5 @@
 {
     "ZOKO": "https://zokoanime.video/stream/ani/{id}/{ep}/{sub}",
-    "Kiwi-Stream": "https://zokoanime.video/kivi/ani/{id}/{ep}/{sub}"
+    "Kiwi-Stream": "https://zokoanime.video/kivi/ani/{id}/{ep}/{sub}",
+    "AniKoto": "https://megaplay.buzz/stream/ani/{id}/{ep}/{sub}"
 }
