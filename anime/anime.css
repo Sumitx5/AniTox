@@ -33,7 +33,6 @@
     );
 }
 
-/* 2. Frosted Floating Info Card */
 .anime-data {
     position: relative;
     max-width: 1200px;
@@ -54,7 +53,6 @@
     align-items: flex-start;
 }
 
-/* Left Vertical Poster & Play Button */
 .poster-column {
     flex: 0 0 220px;
     display: flex;
@@ -101,7 +99,6 @@
     box-shadow: 0 6px 24px var(--red-glow);
 }
 
-/* Right Details Column */
 .details-column {
     flex: 1;
 }
@@ -164,7 +161,6 @@
     margin: 0;
 }
 
-/* Divider Line */
 .glass-divider {
     border: none;
     height: 1px;
@@ -172,7 +168,6 @@
     margin: 32px 0 28px;
 }
 
-/* 3. Episodes Section */
 .episodes-header {
     display: flex;
     justify-content: space-between;
@@ -186,7 +181,6 @@
     margin: 0;
 }
 
-/* Frosted Range Dropdown */
 .drop-down-selector select {
     appearance: none;
     background: rgba(255, 255, 255, 0.06);
@@ -256,6 +250,7 @@
     border-radius: 12px;
     cursor: pointer;
     transition: all 0.25s ease;
+    text-decoration: none;
 }
 
 .episode-card:hover {
@@ -275,6 +270,7 @@
     font-size: 0.85rem;
     color: var(--red);
     min-width: 65px;
+    text-decoration: none;
 }
 
 .ep-title {
@@ -286,11 +282,13 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    text-decoration: none;
 }
 
 .ep-duration {
     font-size: 0.78rem;
-    color: var(--text-dim);
+    color: var(--text);
+    text-decoration: none;
 }
 
 @media (max-width: 991px) {

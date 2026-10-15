@@ -1,0 +1,339 @@
+.schedule-page {
+    max-width: 950px;
+    margin: 20px auto 80px;
+    padding: 0 4%;
+}
+
+.schedule-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.schedule-title {
+    font-size: clamp(1.8rem, 4.5vw, 2.6rem);
+    font-weight: 900;
+    margin: 0 0 6px;
+    letter-spacing: -0.8px;
+}
+
+.schedule-sub {
+    color: var(--gray-text);
+    font-size: 0.88rem;
+    margin: 0;
+}
+
+.days-container-h {
+    display: flex;
+    gap: 10px;
+    overflow-x: auto;
+    padding: 4px 2px 16px;
+    margin-bottom: 28px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.days-container-h::-webkit-scrollbar {
+    display: none;
+}
+
+.day-tab {
+    flex: 0 0 92px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 6px;
+    border-radius: 14px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--border-color);
+    color: var(--gray-text);
+    cursor: pointer;
+    transition: all 0.25s ease;
+    user-select: none;
+}
+
+.day-tab:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+.day-tab.active {
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.28) 0%, rgba(179, 0, 0, 0.15) 100%);
+    border-color: var(--red);
+    color: #fff;
+    box-shadow: 0 0 14px var(--red-glow);
+}
+
+.day-name {
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.day-date {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-top: 2px;
+}
+
+.day-tab.active .day-date {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.timeline-container {
+    position: relative;
+    padding-left: 44px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    top: 42px;
+    bottom: 42px;
+    left: 7px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--border-color) 0%, rgba(255, 255, 255, 0.08) 100%);
+}
+
+.timeline-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -44px;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #0d0d0d;
+    border: 2px solid var(--border-color);
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
+    transition: all 0.25s ease;
+    z-index: 2;
+}
+
+.timeline-connector {
+    position: absolute;
+    left: -30px;
+    width: 30px;
+    height: 2px;
+    background: var(--border-color);
+    transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.timeline-item:first-child .timeline-connector {
+    top: 50%;
+    left: -37px;
+    width: 37px;
+    height: 24px;
+    background: transparent !important;
+    border-top: 2px solid var(--border-color);
+    border-left: 2px solid var(--border-color);
+    border-top-left-radius: 14px;
+    transform: translateY(-50%);
+}
+
+.timeline-item:first-child .timeline-dot {
+    border-color: var(--border-color);
+    background: #0d0d0d;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.timeline-item:hover .timeline-dot {
+    border-color: var(--red);
+    background: var(--red);
+    box-shadow: 0 0 12px var(--red-glow);
+    transform: scale(1.15);
+}
+
+.timeline-item:hover .timeline-connector {
+    background: var(--red);
+    box-shadow: 0 0 6px var(--red-glow);
+}
+
+.timeline-item:first-child:hover .timeline-connector {
+    border-top-color: var(--red);
+    border-left-color: var(--red);
+    box-shadow: -2px -2px 8px var(--red-glow);
+}
+
+.schedule-card {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 18px;
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    box-shadow: var(--glass-shadow), var(--glass-highlight);
+    text-decoration: none;
+    color: inherit;
+    min-width: 0;
+    transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.schedule-card:hover {
+    transform: translateX(5px);
+    border-color: rgba(255, 0, 0, 0.45);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 14px var(--red-glow);
+}
+
+.schedule-thumb {
+    width: 50px;
+    height: 68px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+    background: #111;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.schedule-info {
+    flex: 1;
+    min-width: 0;
+}
+
+.schedule-anime-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    margin: 0 0 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: var(--text);
+}
+
+.schedule-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.76rem;
+}
+
+.ep-badge {
+    color: #fff;
+    background: rgba(255, 0, 0, 0.18);
+    border: 1px solid rgba(255, 0, 0, 0.35);
+    padding: 2px 7px;
+    border-radius: 6px;
+    font-weight: 700;
+    font-size: 0.72rem;
+}
+
+.genre-tag {
+    color: var(--text-dim);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.schedule-time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+    text-align: right;
+}
+
+.air-time {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: #ffc107;
+    letter-spacing: -0.2px;
+}
+
+.air-status {
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-top: 1px;
+}
+
+.schedule-msg {
+    text-align: center;
+    padding: 40px 10px;
+    color: var(--gray-text);
+    font-size: 0.92rem;
+}
+
+@media (max-width: 650px) {
+    .schedule-page {
+        padding: 0 3%;
+        margin-top: 15px;
+    }
+
+    .timeline-container {
+        padding-left: 20px;
+        gap: 12px;
+    }
+
+    .timeline-container::before {
+        top: 32px;
+        bottom: 32px;
+        left: 4px;
+        width: 2px;
+    }
+
+    .timeline-dot {
+        left: -20px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .timeline-connector {
+        left: -10px;
+        width: 10px;
+    }
+
+    .timeline-item:first-child .timeline-connector {
+        left: -16px;
+        width: 16px;
+        height: 18px;
+        border-top-left-radius: 10px;
+    }
+
+    .schedule-card {
+        padding: 8px 10px;
+        gap: 10px;
+        border-radius: 12px;
+    }
+
+    .schedule-thumb {
+        width: 42px;
+        height: 56px;
+    }
+
+    .schedule-anime-title {
+        font-size: 0.84rem;
+        margin-bottom: 4px;
+    }
+
+    .schedule-meta {
+        font-size: 0.7rem;
+        gap: 4px;
+    }
+
+    .ep-badge {
+        padding: 1px 5px;
+        font-size: 0.68rem;
+    }
+
+    .air-time {
+        font-size: 0.76rem;
+    }
+
+    .air-status {
+        font-size: 0.65rem;
+    }
+}

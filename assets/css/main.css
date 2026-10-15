@@ -133,7 +133,6 @@ body::before {
     filter: drop-shadow(0 0 6px var(--red));
 }
 
-/* 2. Page Container & Card Sections */
 .container { 
     padding: 30px 6% 40px;
     max-width: 1400px;
@@ -199,7 +198,6 @@ body::before {
     z-index: 2;
 }
 
-/* Centered Left Content & Title Logo */
 .spotlight-content {
     position: relative;
     z-index: 3;
@@ -255,7 +253,6 @@ body::before {
     box-shadow: 0 6px 24px var(--red-glow);
 }
 
-/* Carousel Indicators (Pills on bottom right) */
 .spotlight-dots {
     position: absolute;
     bottom: 24px;
@@ -420,7 +417,7 @@ body::before {
     justify-content: space-around;
     padding: 8px 0;
     border: 1px solid var(--glass-border);
-    border-radius: 24px;
+    border-radius: 100px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), var(--glass-highlight);
     z-index: 1000;
 }
@@ -445,8 +442,8 @@ body::before {
     flex-direction: column;
     align-items: center;
     gap: 4px;
-    padding: 6px 14px;
-    border-radius: 14px;
+    padding: 6px 18px;
+    border-radius: 24px;
     transition: all 0.25s ease;
 }
 
