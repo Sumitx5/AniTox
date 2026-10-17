@@ -1,0 +1,33 @@
+{
+  "anime_list": [
+    {
+      "ani_id": 212888,
+      "title_eng": "Overgeared",
+      "season": 1,
+      "episodes": [
+        {
+          "ep": 1,
+          "title": "Episode 1",
+          "servers": {
+            "Abyss": "https://player.abyssplayer.com/I-wbykyw9",
+            "Server 2": "https://hanerix.com/e/lxs04sblev6x"
+          }
+        },
+        {
+          "ep": 2,
+          "title": "Episode 2",
+          "servers": {
+            "Abyss": "https://player.abyssplayer.com/53yFoiWbs"
+          }
+        },
+        {
+          "ep": 3,
+          "title": "Episode 3",
+          "servers":{
+            "Abyss": "https://player.abyssplayer.com/IHU-pCVe2"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -115,8 +115,7 @@ async function loadAnimeCatalog() {
             'action_zone',
             'romance_drama',
             'high_rated_gems',
-            'shows',          
-            'movies'         
+            'available_hindi'
         ];
 
         categories.forEach(category => {

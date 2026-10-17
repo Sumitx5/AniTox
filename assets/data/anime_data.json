@@ -545,5 +545,15 @@
       "rating": 8.9,
       "image": "https://cdn.myanimelist.net/images/anime/1085/114792l.jpg"
     }
+  ],
+  "available_hindi": [
+    {
+      "id": 212888,
+      "title": "Overgeared",
+      "type": "ONA",
+      "rating": 7.5,
+      "image": "https://cdn.myanimelist.net/images/anime/1386/160022l.jpg"
+
+    }
   ]
 }

@@ -5,8 +5,10 @@ let animeId = null;
 let currentEp = 1;
 let currentAudio = 'sub';
 let currentServer = null;
+let currentHindiServer = null;
 let streamingApis = {};
 let totalEpisodes = 1;
+let hindiData = null;
 
 function parseQueryParams() {
     const params = new URLSearchParams(window.location.search);
@@ -58,6 +60,53 @@ async function fetchAnimeFromAniList(id) {
     }
 }
 
+async function fetchHindiData() {
+    try {
+        const repoName = window.location.pathname.split('/')[1];
+        const basePath = window.location.origin.includes('github.io') ? `/${repoName}/` : '../';
+
+        const res = await fetch(`${basePath}assets/data/hindi_available.json`);
+        if (!res.ok) return null;
+
+        const data = await res.json();
+        const list = data.anime_list || [];
+        
+        return list.find(item => String(item.ani_id) === String(animeId)) || null;
+    } catch (err) {
+        console.warn('Hindi data file not found or failed to load:', err);
+        return null;
+    }
+}
+
+function renderAudioButtons() {
+    const audioContainer = document.querySelector('.audio-switch-tabs');
+    if (!audioContainer) return;
+
+    let html = `
+        <span class="ctrl-label">Audio:</span>
+        <button class="audio-btn ${currentAudio === 'sub' ? 'active' : ''}" data-audio="sub">SUB</button>
+        <button class="audio-btn ${currentAudio === 'dub' ? 'active' : ''}" data-audio="dub">DUB</button>
+    `;
+
+    if (hindiData) {
+        html += `<button class="audio-btn ${currentAudio === 'hindi' ? 'active' : ''}" data-audio="hindi">HINDI</button>`;
+    } else if (currentAudio === 'hindi') {
+        currentAudio = 'sub';
+    }
+
+    audioContainer.innerHTML = html;
+
+    audioContainer.querySelectorAll('.audio-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            currentAudio = btn.dataset.audio;
+            audioContainer.querySelectorAll('.audio-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            updateServerTabs();
+            updatePlayer();
+        });
+    });
+}
+
 async function fetchApis() {
     try {
         const repoName = window.location.pathname.split('/')[1];
@@ -71,7 +120,6 @@ async function fetchApis() {
         const apiKeys = Object.keys(streamingApis);
         if (apiKeys.length > 0) {
             currentServer = apiKeys[0];
-            renderServerButtons(apiKeys);
         }
     } catch (err) {
         console.error('Failed to load streaming APIs:', err);
@@ -79,18 +127,55 @@ async function fetchApis() {
             "Server 1": "https://example.com/embed/{id}/{ep}/{sub}/"
         };
         currentServer = "Server 1";
-        renderServerButtons(["Server 1"]);
     }
 }
 
-function renderServerButtons(keys) {
+function getHindiServersForCurrentEp() {
+    if (!hindiData || !hindiData.episodes) return {};
+    const epObj = hindiData.episodes.find(e => Number(e.ep) === Number(currentEp));
+    if (!epObj) return {};
+
+    if (epObj.servers && typeof epObj.servers === 'object') {
+        return epObj.servers;
+    }
+    if (epObj.ep_id) {
+        return { "Server 1": epObj.ep_id };
+    }
+    return {};
+}
+
+function updateServerTabs() {
     const serverTabs = document.querySelector('.server-tabs');
     if (!serverTabs) return;
 
+    let serverKeys = [];
+    let activeKey = null;
+
+    if (currentAudio === 'hindi') {
+        const hindiServers = getHindiServersForCurrentEp();
+        serverKeys = Object.keys(hindiServers);
+
+        if (serverKeys.length === 0) {
+            serverTabs.innerHTML = '<span class="ctrl-label" style="color:var(--text-dim);">No Hindi Server</span>';
+            return;
+        }
+
+        if (!currentHindiServer || !hindiServers[currentHindiServer]) {
+            currentHindiServer = serverKeys[0];
+        }
+        activeKey = currentHindiServer;
+    } else {
+        serverKeys = Object.keys(streamingApis);
+        if (!currentServer && serverKeys.length > 0) {
+            currentServer = serverKeys[0];
+        }
+        activeKey = currentServer;
+    }
+
     let html = '<span class="ctrl-label">Server:</span>';
-    keys.forEach((key, index) => {
+    serverKeys.forEach(key => {
         html += `
-            <button class="server-btn ${index === 0 ? 'active' : ''}" data-server="${key}">
+            <button class="server-btn ${key === activeKey ? 'active' : ''}" data-server="${key}">
                 ${key}
             </button>
         `;
@@ -101,20 +186,34 @@ function renderServerButtons(keys) {
         btn.addEventListener('click', () => {
             serverTabs.querySelectorAll('.server-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            currentServer = btn.dataset.server;
+
+            if (currentAudio === 'hindi') {
+                currentHindiServer = btn.dataset.server;
+            } else {
+                currentServer = btn.dataset.server;
+            }
             updatePlayer();
         });
     });
 }
 
-function getEmbedUrl(id, ep, audio, serverKey) {
-    const baseLink = streamingApis[serverKey];
+function getEmbedUrl() {
+    if (currentAudio === 'hindi') {
+        const hindiServers = getHindiServersForCurrentEp();
+        if (currentHindiServer && hindiServers[currentHindiServer]) {
+            return hindiServers[currentHindiServer];
+        }
+        const first = Object.values(hindiServers)[0];
+        return first || '';
+    }
+
+    const baseLink = streamingApis[currentServer];
     if (!baseLink) return '';
 
     return baseLink
-        .replace('{id}', encodeURIComponent(id))
-        .replace('{ep}', ep)
-        .replace('{sub}', audio);
+        .replace('{id}', encodeURIComponent(animeId))
+        .replace('{ep}', currentEp)
+        .replace('{sub}', currentAudio);
 }
 
 function updatePlayer() {
@@ -123,8 +222,15 @@ function updatePlayer() {
     const prevBtn = document.getElementById('btn-prev-ep');
     const nextBtn = document.getElementById('btn-next-ep');
 
-    if (iframe && currentServer) {
-        iframe.src = getEmbedUrl(animeId, currentEp, currentAudio, currentServer);
+    if (iframe) {
+        iframe.removeAttribute('sandbox');
+        iframe.removeAttribute('referrerpolicy');
+        iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen');
+
+        const streamUrl = getEmbedUrl();
+        if (iframe.src !== streamUrl) {
+            iframe.src = streamUrl;
+        }
     }
 
     if (badge) {
@@ -208,6 +314,7 @@ function renderEpisodeBatch(batchIndex, total) {
     container.querySelectorAll('.ep-chip').forEach(chip => {
         chip.addEventListener('click', () => {
             currentEp = parseInt(chip.dataset.ep, 10);
+            updateServerTabs();
             updatePlayer();
         });
     });
@@ -227,6 +334,10 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (backBtn) {
         backBtn.href = `../anime/?id=${encodeURIComponent(animeId)}`;
     }
+
+    hindiData = await fetchHindiData();
+    renderAudioButtons();
+    await fetchApis();
 
     const media = await fetchAnimeFromAniList(animeId);
     if (media) {
@@ -256,12 +367,13 @@ document.addEventListener('DOMContentLoaded', async () => {
     setupRangeDropdown(totalEpisodes);
     renderEpisodeBatch(Math.floor((currentEp - 1) / EPS_PER_PAGE), totalEpisodes);
 
-    await fetchApis();
+    updateServerTabs();
     updatePlayer();
 
     document.getElementById('btn-prev-ep')?.addEventListener('click', () => {
         if (currentEp > 1) {
             currentEp--;
+            updateServerTabs();
             updatePlayer();
         }
     });
@@ -269,14 +381,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     document.getElementById('btn-next-ep')?.addEventListener('click', () => {
         if (currentEp < totalEpisodes) {
             currentEp++;
+            updateServerTabs();
             updatePlayer();
         }
-    });
-
-    document.querySelectorAll('.audio-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            currentAudio = btn.dataset.audio;
-            updatePlayer();
-        });
     });
 });
