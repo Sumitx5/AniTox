@@ -1,30 +1,803 @@
 {
   "anime_list": [
     {
-      "ani_id": 212888,
-      "title_eng": "Overgeared",
+      "ani_id": 114121,
+      "title_eng": "The Daily Life of the Immortal King",
       "season": 1,
       "episodes": [
         {
           "ep": 1,
-          "title": "Episode 1",
           "servers": {
-            "Abyss": "https://player.abyssplayer.com/I-wbykyw9",
-            "Server 2": "https://hanerix.com/e/lxs04sblev6x"
+            "Abyss": "https://abysscdn.com/?v=LO7rmDFdo",
+            "Server 2": "https://ravok.buzz/video/03e0704b5690a2dee1861dc3ad3316c9"
           }
         },
         {
           "ep": 2,
-          "title": "Episode 2",
           "servers": {
-            "Abyss": "https://player.abyssplayer.com/53yFoiWbs"
+            "Abyss": "https://abysscdn.com/?v=pfJU041Eu",
+            "Server 2": "https://ravok.buzz/video/ef50c335cca9f340bde656363ebd02fd"
           }
         },
         {
           "ep": 3,
-          "title": "Episode 3",
-          "servers":{
-            "Abyss": "https://player.abyssplayer.com/IHU-pCVe2"
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=2rIRDqa_m",
+            "Server 2": "https://ravok.buzz/video/5d616dd38211ebb5d6ec52986674b6e4"
+          }
+        },
+        {
+          "ep": 4,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=B7Ocq6k21",
+            "Server 2": "https://ravok.buzz/video/08fe2621d8e716b02ec0da35256a998d"
+          }
+        },
+        {
+          "ep": 5,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=9nGS5tWC1",
+            "Server 2": "https://ravok.buzz/video/298923c8190045e91288b430794814c4"
+          }
+        },
+        {
+          "ep": 6,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=vdfVgLQ5L",
+            "Server 2": "https://ravok.buzz/video/766d856ef1a6b02f93d894415e6bfa0e"
+          }
+        },
+        {
+          "ep": 7,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=7Vckfc07t",
+            "Server 2": "https://ravok.buzz/video/6b180037abbebea991d8b1232f8a8ca9"
+          }
+        },
+        {
+          "ep": 8,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=byeMNd-7r",
+            "Server 2": "https://ravok.buzz/video/f33ba15effa5c10e873bf3842afb46a6"
+          }
+        },
+        {
+          "ep": 9,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=Pn5aAU2FDx",
+            "Server 2": "https://ravok.buzz/video/7f975a56c761db6506eca0b37ce6ec87"
+          }
+        },
+        {
+          "ep": 10,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=Q1gJt2zjq",
+            "Server 2": "https://ravok.buzz/video/1e48c4420b7073bc11916c6c1de226bb"
+          }
+        },
+        {
+          "ep": 11,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=SuNAZw-QU",
+            "Server 2": "https://ravok.buzz/video/31b3b31a1c2f8a370206f111127c0dbd"
+          }
+        },
+        {
+          "ep": 12,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=f6EKrZQ46",
+            "Server 2": "https://ravok.buzz/video/1587965fb4d4b5afe8428a4a024feb0d"
+          }
+        },
+        {
+          "ep": 13,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=kLwIbonWY",
+            "Server 2": "https://ravok.buzz/video/d7322ed717dedf1eb4e6e52a37ea7bcd"
+          }
+        },
+        {
+          "ep": 14,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=zfbgoY6w-",
+            "Server 2": "https://ravok.buzz/video/9246444d94f081e3549803b928260f56"
+          }
+        },
+        {
+          "ep": 15,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=gtVEq7SsQ",
+            "Server 2": "https://ravok.buzz/video/2387337ba1e0b0249ba90f55b2ba2521"
+          }
+        }
+      ]
+    },
+    {
+      "ani_id": 126357,
+      "title_eng": "The Daily Life of the Immortal King",
+      "season": 2,
+      "episodes": [
+        {
+          "ep": 1,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=1XjhFxk0d",
+            "Server 2": "https://ravok.buzz/video/fed33392d3a48aa149a87a38b875ba4a"
+          }
+        },
+        {
+          "ep": 2,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=BjabizdbF",
+            "Server 2": "https://ravok.buzz/video/aa68c75c4a77c87f97fb686b2f068676"
+          }
+        },
+        {
+          "ep": 3,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=CV_MRprZX",
+            "Server 2": "https://ravok.buzz/video/fba9d88164f3e2d9109ee770223212a0"
+          }
+        },
+        {
+          "ep": 4,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=MGVjOWJ6C",
+            "Server 2": "https://ravok.buzz/video/b8c37e33defde51cf91e1e03e51657da"
+          }
+        },
+        {
+          "ep": 5,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=15errT-IF",
+            "Server 2": "https://ravok.buzz/video/a9b7ba70783b617e9998dc4dd82eb3c5"
+          }
+        },
+        {
+          "ep": 6,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=EtOj4_f2N",
+            "Server 2": "https://ravok.buzz/video/b706835de79a2b4e80506f582af3676a"
+          }
+        },
+        {
+          "ep": 7,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=AK3Zae4vr",
+            "Server 2": "https://ravok.buzz/video/9ab0d88431732957a618d4a469a0d4c3"
+          }
+        },
+        {
+          "ep": 8,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=sWvGU1qFn",
+            "Server 2": "https://ravok.buzz/video/ec5aa0b7846082a2415f0902f0da88f2"
+          }
+        },
+        {
+          "ep": 9,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=eheDsCu2i",
+            "Server 2": "https://ravok.buzz/video/0b8aff0438617c055eb55f0ba5d226fa"
+          }
+        },
+        {
+          "ep": 10,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=0f0hGQ6wu",
+            "Server 2": "https://ravok.buzz/video/2bcab9d935d219641434683dd9d18a03"
+          }
+        },
+        {
+          "ep": 11,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=chIxuS2zK",
+            "Server 2": "https://ravok.buzz/video/934815ad542a4a7c5e8a2dfa04fea9f5"
+          }
+        },
+        {
+          "ep": 12,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=QmtD5hvTO",
+            "Server 2": "https://ravok.buzz/video/7b13b2203029ed80337f27127a9f1d28"
+          }
+        }
+      ]
+    },
+    {
+      "ani_id": 141852,
+      "title_eng": "The Daily Life of the Immortal King",
+      "season": 3,
+      "episodes": [
+        {
+          "ep": 1,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=Zaeblk3FF",
+            "Server 2": "https://ravok.buzz/video/860320be12a1c050cd7731794e231bd3"
+          }
+        },
+        {
+          "ep": 2,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=RDB7orG9C",
+            "Server 2": "https://ravok.buzz/video/692f93be8c7a41525c0baf2076aecfb4"
+          }
+        },
+        {
+          "ep": 3,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=wsAA-iD0w",
+            "Server 2": "https://ravok.buzz/video/4fac9ba115140ac4f1c22da82aa0bc7f"
+          }
+        },
+        {
+          "ep": 4,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=l1-MIs7rC",
+            "Server 2": "https://ravok.buzz/video/a1140a3d0df1c81e24ae954d935e8926"
+          }
+        },
+        {
+          "ep": 5,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=TBANbD9Kl",
+            "Server 2": "https://ravok.buzz/video/9908279ebbf1f9b250ba689db6a0222b"
+          }
+        },
+        {
+          "ep": 6,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=Yf_6siqDu",
+            "Server 2": "https://ravok.buzz/video/df6d2338b2b8fce1ec2f6dda0a630eb0"
+          }
+        },
+        {
+          "ep": 7,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=wPm6sQOpL",
+            "Server 2": "https://ravok.buzz/video/8f468c873a32bb0619eaeb2050ba45d1"
+          }
+        },
+        {
+          "ep": 8,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=wmFKw5avt",
+            "Server 2": "https://ravok.buzz/video/fe7ee8fc1959cc7214fa21c4840dff0a"
+          }
+        },
+        {
+          "ep": 9,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=B6R70Pi2u",
+            "Server 2": "https://ravok.buzz/video/54a367d629152b720749e187b3eaa11b"
+          }
+        },
+        {
+          "ep": 10,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=qVV8XMWro",
+            "Server 2": "https://ravok.buzz/video/d93ed5b6db83be78efb0d05ae420158e"
+          }
+        },
+        {
+          "ep": 11,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=SlSOenp3K",
+            "Server 2": "https://ravok.buzz/video/6aab1270668d8cac7cef2566a1c5f569"
+          }
+        },
+        {
+          "ep": 12,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=Dk8hcCcFp",
+            "Server 2": "https://ravok.buzz/video/fec8d47d412bcbeece3d9128ae855a7a"
+          }
+        }
+      ]
+    },
+    {
+      "ani_id": 156110,
+      "title_eng": "The Daily Life of the Immortal King",
+      "season": 4,
+      "episodes": [
+        {
+          "ep": 1,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=nH6uK7wuR",
+            "Server 2": "https://ravok.buzz/video/287e03db1d99e0ec2edb90d079e142f3"
+          }
+        },
+        {
+          "ep": 2,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=WwR3bMjyRi",
+            "Server 2": "https://ravok.buzz/video/d79aac075930c83c2f1e369a511148fe"
+          }
+        },
+        {
+          "ep": 3,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=HcLNjwhWv",
+            "Server 2": "https://ravok.buzz/video/c32d9bf27a3da7ec8163957080c8628e"
+          }
+        },
+        {
+          "ep": 4,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=TcSO1idC2",
+            "Server 2": "https://ravok.buzz/video/2ab56412b1163ee131e1246da0955bd1"
+          }
+        },
+        {
+          "ep": 5,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=r6pM-ZgyS",
+            "Server 2": "https://ravok.buzz/video/cc1aa436277138f61cda703991069eaf"
+          }
+        },
+        {
+          "ep": 6,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=XJSkuIsZX",
+            "Server 2": "https://ravok.buzz/video/9c01802ddb981e6bcfbec0f0516b8e35"
+          }
+        },
+        {
+          "ep": 7,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=P24RUOyOk",
+            "Server 2": "https://ravok.buzz/video/92977ae4d2ba21425a59afb269c2a14e"
+          }
+        },
+        {
+          "ep": 8,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=VGeV_M0uo",
+            "Server 2": "https://ravok.buzz/video/4311359ed4969e8401880e3c1836fbe1"
+          }
+        },
+        {
+          "ep": 9,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=HEHu_vq5N",
+            "Server 2": "https://ravok.buzz/video/ca75910166da03ff9d4655a0338e6b09"
+          }
+        },
+        {
+          "ep": 10,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=TynncbENp",
+            "Server 2": "https://ravok.buzz/video/c22abfa379f38b5b0411bc11fa9bf92f"
+          }
+        },
+        {
+          "ep": 11,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=XWQKNHKjq",
+            "Server 2": "https://ravok.buzz/video/6602294be910b1e3c4571bd98c4d5484"
+          }
+        },
+        {
+          "ep": 12,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=VcDjb6NXj",
+            "Server 2": "https://ravok.buzz/video/89fcd07f20b6785b92134bd6c1d0fa42"
+          }
+        }
+      ]
+    },
+    {
+      "ani_id": 185857,
+      "title_eng": "The Daily Life of the Immortal King",
+      "season": 5,
+      "episodes": [
+        {
+          "ep": 1,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/08357dda130ec9b85fa60db2cf979b7b"
+          }
+        },
+        {
+          "ep": 2,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=jCPviHh0y",
+            "Server 2": "https://ravok.buzz/video/f004a7ecc4215ef1a36afca580fd6380"
+          }
+        },
+        {
+          "ep": 3,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=w25XnMftg",
+            "Server 2": "https://ravok.buzz/video/296add4760393dc63707e407affcbc84"
+          }
+        },
+        {
+          "ep": 4,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=Nfgvnk43e",
+            "Server 2": "https://ravok.buzz/video/db9aad0a768e82ed7c1b4b3f86b829fc"
+          }
+        },
+        {
+          "ep": 5,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=NCZ6PAQhL",
+            "Server 2": "https://ravok.buzz/video/3cfdd7664327131b75c1624c2ac72456"
+          }
+        },
+        {
+          "ep": 6,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=F8EhpLh-h",
+            "Server 2": "https://ravok.buzz/video/74ab171bf4452a0f3ef007a38df8be7e"
+          }
+        },
+        {
+          "ep": 7,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=MBqdfEE0f",
+            "Server 2": "https://ravok.buzz/video/cdeeafb8118bb5cf2fd45b00d389e03a"
+          }
+        },
+        {
+          "ep": 8,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=tEITFVej5",
+            "Server 2": "https://ravok.buzz/video/48fb20ee25f8ec60949e66e5ebb46600"
+          }
+        },
+        {
+          "ep": 9,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=kKTtZIpTn",
+            "Server 2": "https://ravok.buzz/video/455b3cee95ff9200035018456ef17edc"
+          }
+        },
+        {
+          "ep": 10,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=9Agy2DgJ2",
+            "Server 2": "https://ravok.buzz/video/900245b439fc98341ca28d3323241e7d"
+          }
+        },
+        {
+          "ep": 11,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=6-Sblp4jT",
+            "Server 2": "https://ravok.buzz/video/11af6b055e34d4ab516d9cea9c12a359"
+          }
+        },
+        {
+          "ep": 12,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=XKfe47SzxW",
+            "Server 2": "https://ravok.buzz/video/8e804eaeeba29084917f03fb77fe0419"
+          }
+        }
+      ]
+    },
+    {
+      "ani_id": 98659,
+      "title_eng": "Classroom of the Elite",
+      "season": 1,
+      "episodes": [
+        {
+          "ep": 1,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=HqsPPIDVK",
+            "Server 2": "https://ravok.buzz/video/0ffb8460d08197d28aaf795711fc8f65"
+          }
+        },
+        {
+          "ep": 2,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=LKbFOvFYdz",
+            "Server 2": "https://ravok.buzz/video/a3a51080d3fcd1adab3a44996fd6b977"
+          }
+        },
+        {
+          "ep": 3,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=wWFRRpq33",
+            "Server 2": "https://ravok.buzz/video/13b0c579c1bdc8439ab3de83b480ccf6"
+          }
+        },
+        {
+          "ep": 4,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=Nyh8HnTqX",
+            "Server 2": "https://ravok.buzz/video/01a2f2129e2c141325090c48fa415000"
+          }
+        },
+        {
+          "ep": 5,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=tHmcrvxge",
+            "Server 2": "https://ravok.buzz/video/48d6f19c288499f43a49247e4754c88a"
+          }
+        },
+        {
+          "ep": 6,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=yHC8KiQ6ab",
+            "Server 2": "https://ravok.buzz/video/cb163ca892e056942e0e62c30953bd85"
+          }
+        },
+        {
+          "ep": 7,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=UDHtrWtaE",
+            "Server 2": "https://ravok.buzz/video/905669063311d8a17bd6958cd353eedd"
+          }
+        },
+        {
+          "ep": 8,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=dTT-RKo61",
+            "Server 2": "https://ravok.buzz/video/a25e0e62a4702353f399953579424997"
+          }
+        },
+        {
+          "ep": 9,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=qzPKrmgZg",
+            "Server 2": "https://ravok.buzz/video/d8b121387a58ed51d1e9459a0edb5934"
+          }
+        },
+        {
+          "ep": 10,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=jxg6b9m1S",
+            "Server 2": "https://ravok.buzz/video/40641914166f1cba1d06c020e462ff8e"
+          }
+        },
+        {
+          "ep": 11,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=T401Zj_5F",
+            "Server 2": "https://ravok.buzz/video/15bc628d47f736bedf12b75d723abc1d"
+          }
+        },
+        {
+          "ep": 12,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=vRHp5SQVd",
+            "Server 2": "https://ravok.buzz/video/9a1d8e7dcd9cc4fd0e9806ea87e3105f"
+          }
+        }
+      ]
+    },
+    {
+      "ani_id": 145545,
+      "title_eng": "Classroom of the Elite",
+      "season": 2,
+      "episodes": [
+        {
+          "ep": 1,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=iEq_Amf1K",
+            "Server 2": "https://ravok.buzz/video/f0668dd2cb48679009e0e7bfd122b7a9"
+          }
+        },
+        {
+          "ep": 2,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=9CC-3mCa7",
+            "Server 2": "https://ravok.buzz/video/9aa92dce525591ed890cf7869cd62900"
+          }
+        },
+        {
+          "ep": 3,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=JrHYRVE3A",
+            "Server 2": "https://ravok.buzz/video/6d4bcfa605eacb74a48e2a0a871be965"
+          }
+        },
+        {
+          "ep": 4,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=NG2D8KZSn",
+            "Server 2": "https://ravok.buzz/video/ebf4a67ad8e64265c8777f8c0fe5c1c4"
+          }
+        },
+        {
+          "ep": 5,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=xFGdf98qs",
+            "Server 2": "https://ravok.buzz/video/12b5fc7904a4ed8e390a03143b2cc10b"
+          }
+        },
+        {
+          "ep": 6,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=MmewbJlc9",
+            "Server 2": "https://ravok.buzz/video/a666b5dec0048c93e4e6cf6fda6e09bd"
+          }
+        },
+        {
+          "ep": 7,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=YKd6eyeS8",
+            "Server 2": "https://ravok.buzz/video/d65631146921df3bf8e43030e574af33"
+          }
+        },
+        {
+          "ep": 8,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=OK2UyAKsR",
+            "Server 2": "https://ravok.buzz/video/c2040acffc30ed5c6145ba880466705f"
+          }
+        },
+        {
+          "ep": 9,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=2gJQBYI6C",
+            "Server 2": "https://ravok.buzz/video/13d83d3841ae1b9276af3439ced7120d"
+          }
+        },
+        {
+          "ep": 10,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=8yiAFCXrf",
+            "Server 2": "https://ravok.buzz/video/0163abec5241cd7eb07ad0545701dd16"
+          }
+        },
+        {
+          "ep": 11,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=P_SVGQ-3a",
+            "Server 2": "https://ravok.buzz/video/802ff97a1290381d236bd78ab83b84bb"
+          }
+        },
+        {
+          "ep": 12,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=9tBw6ogHJ",
+            "Server 2": "https://ravok.buzz/video/17a8e6855aeeeebe0b2e132f87a71a53"
+          }
+        },
+        {
+          "ep": 13,
+          "servers": {
+            "Abyss": "https://abysscdn.com/?v=XxOqZWCJc",
+            "Server 2": "https://ravok.buzz/video/7248f12044a0790cd9933886d17234eb"
+          }
+        }
+      ]
+    },
+    {
+      "ani_id": 146066,
+      "title_eng": "Classroom of the Elite",
+      "season": 3,
+      "episodes": [
+        {
+          "ep": 1,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/fa3395b241c4665f95f2f71a5b59cb74"
+          }
+        },
+        {
+          "ep": 2,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/4b1c6f5b1c493eef6ef6635c280feecc"
+          }
+        },
+        {
+          "ep": 3,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/87962196b592e3b0833f85b4a5b088f1"
+          }
+        },
+        {
+          "ep": 4,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/ad0a5cf8176cf1ebc54a07b5aeee9d85"
+          }
+        },
+        {
+          "ep": 5,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/f75737387e88d6ba5d789814bc2fbdc4"
+          }
+        },
+        {
+          "ep": 6,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/275c8bcb2fd8fa798e3f55703bb8c40d"
+          }
+        },
+        {
+          "ep": 7,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/c51a02c186f00636e81c8af4845b8b64"
+          }
+        },
+        {
+          "ep": 8,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/4183e30bedc6f2b3bbfb856a79668d0b"
+          }
+        },
+        {
+          "ep": 9,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/7de47452d56d59cf1b1e1542f9baeb13"
+          }
+        },
+        {
+          "ep": 10,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/d243d09058c40e2862d04960adc86d85"
+          }
+        },
+        {
+          "ep": 11,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/5a211ba771eef85828a0a9299467ea19"
+          }
+        },
+        {
+          "ep": 12,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/f65e4b73bc7df2837d715bf283f6afa7"
+          }
+        },
+        {
+          "ep": 13,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/13b27f9cc9ae10dd133add0570669d7c"
+          }
+        }
+      ]
+    },
+    {
+      "ani_id": 187538,
+      "title_eng": "Black Torch",
+      "season": 1,
+      "episodes": [
+        {
+          "ep": 1,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/5f22e82f3d2c279d57c76a0513276abb"
+          }
+        },
+        {
+          "ep": 2,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/12d7d2b7f1a9db42326ae3f428f43a7a"
+          }
+        },
+        {
+          "ep": 3,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/09007e0cca182de277bede82c40f2b1e"
+          }
+        },
+        {
+          "ep": 4,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/18c746a0e715b82e90f0b63ba322576f"
+          }
+        },
+        {
+          "ep": 5,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/489df1727ce07aae5f09ca2d90ff9f74"
+          }
+        },
+        {
+          "ep": 6,
+          "servers": {}
+        },
+        {
+          "ep": 7,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/c6b674f5588228036011778df458d756"
+          }
+        },
+        {
+          "ep": 8,
+          "servers": {
+            "Server 2": "https://ravok.buzz/video/57198de0fd9b28665ba93b8c07ccbae3"
           }
         }
       ]

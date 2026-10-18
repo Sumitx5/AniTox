@@ -1,5 +1,28 @@
 let spotlightInterval = null;
 let currentSlideIndex = 0;
+let deferredPrompt;
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('../sw.js')
+      .then((reg) => console.log('PWA ServiceWorker registered:', reg.scope))
+      .catch((err) => console.warn('ServiceWorker registration failed:', err));
+  });
+}
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    const repoName = window.location.pathname.split('/')[1];
+    const isGitHubPages = window.location.origin.includes('github.io');
+    const basePath = isGitHubPages ? `/${repoName}/` : '/';
+
+    const swUrl = `${basePath}sw.js`;
+
+    navigator.serviceWorker.register(swUrl, { scope: basePath })
+      .then((reg) => console.log('PWA ServiceWorker registered with scope:', reg.scope))
+      .catch((err) => console.warn('ServiceWorker registration failed:', err));
+  });
+}
 
 function renderSpotlight(spotlightList) {
     const container = document.getElementById('spotlight-carousel');

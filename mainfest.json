@@ -1,0 +1,18 @@
+{
+  "name": "AniTox",
+  "short_name": "AniTox",
+  "description": "Stream anime series, movies, and track schedules.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#ff0000",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "assets/icons/icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
