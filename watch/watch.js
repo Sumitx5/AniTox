@@ -1,5 +1,7 @@
 const ANILIST_API = 'https://graphql.anilist.co';
 const EPS_PER_PAGE = 50;
+const HISTORY_STORAGE_KEY = 'anitox_watch_history';
+const MAX_HISTORY_ITEMS = 30;
 
 let animeId = null;
 let currentEp = 1;
@@ -10,6 +12,9 @@ let streamingApis = {};
 let totalEpisodes = 1;
 let hindiData = null;
 
+let currentAnimeTitle = '';
+let currentAnimeCover = '';
+
 function parseQueryParams() {
     const params = new URLSearchParams(window.location.search);
     animeId = params.get('id') || '21';
@@ -17,6 +22,7 @@ function parseQueryParams() {
     currentAudio = params.get('audio') || 'sub';
 }
 
+// 1. Updated AniList query to request cover image
 const ANIME_QUERY = `
 query ($id: Int) {
   Media (id: $id, type: ANIME) {
@@ -24,6 +30,10 @@ query ($id: Int) {
     title {
       romaji
       english
+    }
+    coverImage {
+      large
+      extraLarge
     }
     episodes
     nextAiringEpisode {
@@ -33,6 +43,53 @@ query ($id: Int) {
   }
 }
 `;
+
+function getWatchHistory() {
+    try {
+        const raw = localStorage.getItem(HISTORY_STORAGE_KEY);
+        if (!raw) return { watch_history: [] };
+        const parsed = JSON.parse(raw);
+        return Array.isArray(parsed?.watch_history) ? parsed : { watch_history: [] };
+    } catch (e) {
+        console.error("Failed to read watch history:", e);
+        return { watch_history: [] };
+    }
+}
+
+function recordWatchHistory() {
+    if (!animeId) return;
+
+    const data = getWatchHistory();
+    const list = data.watch_history;
+    const numericId = parseInt(animeId, 10);
+
+    const existingIndex = list.findIndex(item => Number(item.ani_id) === numericId);
+    const prevItem = existingIndex > -1 ? list[existingIndex] : null;
+
+    const entry = {
+        ani_id: numericId,
+        title_eng: currentAnimeTitle || prevItem?.title_eng || 'Anime',
+        season: 1,
+        episode: currentEp,
+        anime_thumbnail: currentAnimeCover || prevItem?.anime_thumbnail || ''
+    };
+
+    if (existingIndex > -1) {
+        list.splice(existingIndex, 1);
+    }
+
+    list.unshift(entry);
+
+    if (list.length > MAX_HISTORY_ITEMS) {
+        list.length = MAX_HISTORY_ITEMS;
+    }
+
+    try {
+        localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify({ watch_history: list }));
+    } catch (e) {
+        console.error("Failed to save watch history:", e);
+    }
+}
 
 async function fetchAnimeFromAniList(id) {
     const numericId = parseInt(id, 10);
@@ -249,6 +306,8 @@ function updatePlayer() {
 
     const newUrl = `${window.location.pathname}?id=${encodeURIComponent(animeId)}&ep=${currentEp}&audio=${currentAudio}`;
     window.history.replaceState(null, '', newUrl);
+
+    recordWatchHistory();
 }
 
 function setupRangeDropdown(total) {
@@ -341,11 +400,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const media = await fetchAnimeFromAniList(animeId);
     if (media) {
-        const title = media.title.english || media.title.romaji || "Anime";
-        document.title = `AniTox Watching: ${title} (Ep ${currentEp})`;
+        currentAnimeTitle = media.title.english || media.title.romaji || "Anime";
+        currentAnimeCover = media.coverImage?.extraLarge || media.coverImage?.large || '';
+
+        document.title = `AniTox Watching: ${currentAnimeTitle} (Ep ${currentEp})`;
 
         const titleLabel = document.getElementById('anime-title-label');
-        if (titleLabel) titleLabel.textContent = title;
+        if (titleLabel) titleLabel.textContent = currentAnimeTitle;
 
         if (media.status === 'NOT_YET_RELEASED') {
             totalEpisodes = 0;

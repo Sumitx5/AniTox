@@ -1,14 +1,7 @@
 let spotlightInterval = null;
 let currentSlideIndex = 0;
 let deferredPrompt;
-
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('../sw.js')
-      .then((reg) => console.log('PWA ServiceWorker registered:', reg.scope))
-      .catch((err) => console.warn('ServiceWorker registration failed:', err));
-  });
-}
+const HISTORY_STORAGE_KEY = 'anitox_watch_history';
 
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
@@ -116,7 +109,81 @@ function createCardHTML(anime) {
     `;
 }
 
+function loadWatchHistory() {
+    const container = document.getElementById('continue_watching');
+    const section = document.getElementById('continue-watching-section');
+
+    let historyList = [];
+    try {
+        const raw = localStorage.getItem(HISTORY_STORAGE_KEY);
+        if (raw) {
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed?.watch_history)) {
+                historyList = parsed.watch_history;
+            }
+        }
+    } catch (e) {
+        console.error("Failed to parse watch history:", e);
+    }
+
+    if (!container) return;
+
+    if (!historyList || historyList.length === 0) {
+        if (section) section.style.display = 'none';
+        container.innerHTML = '';
+        return;
+    }
+
+    if (section) section.style.display = 'block';
+
+    const repoName = window.location.pathname.split('/')[1];
+    const basePath = window.location.origin.includes('github.io') ? `/${repoName}/` : './';
+
+    container.innerHTML = historyList.map(item => `
+        <div class="history-card-wrapper" style="position: relative; display: inline-block;">
+            <a href="${basePath}watch/?id=${encodeURIComponent(item.ani_id)}&ep=${item.episode}" class="anime-card" style="text-decoration: none; color: inherit;">
+                <div style="position: relative; overflow: hidden; border-radius: 8px;">
+                    <img 
+                        src="${item.anime_thumbnail || 'https://placehold.co/165x240/111/fff?text=No+Cover'}" 
+                        alt="${item.title_eng}" 
+                        loading="lazy" 
+                        onerror="this.src='https://placehold.co/165x240/111/fff?text=No+Cover'"
+                    />
+                    <span style="position: absolute; bottom: 6px; right: 6px; background: rgba(0,0,0,0.85); color: #fff; padding: 2px 6px; border-radius: 4px; font-size: 0.72rem; font-weight: 700; border: 1px solid var(--red, #f00);">
+                        EP ${item.episode}
+                    </span>
+                </div>
+                <h3 title="${item.title_eng}">${item.title_eng}</h3>
+            </a>
+            <button 
+                onclick="removeHistoryItem(${item.ani_id})"
+                title="Remove from history"
+                style="position: absolute; top: 6px; right: 6px; background: rgba(0,0,0,0.7); border: none; color: #fff; width: 22px; height: 22px; border-radius: 50%; cursor: pointer; font-size: 11px; display: flex; align-items: center; justify-content: center; z-index: 5;">
+                ✕
+            </button>
+        </div>
+    `).join('');
+}
+
+// Global function to remove item from history
+window.removeHistoryItem = function(aniId) {
+    try {
+        const raw = localStorage.getItem(HISTORY_STORAGE_KEY);
+        if (!raw) return;
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed?.watch_history)) {
+            parsed.watch_history = parsed.watch_history.filter(item => Number(item.ani_id) !== Number(aniId));
+            localStorage.setItem(HISTORY_STORAGE_KEY, JSON.stringify(parsed));
+            loadWatchHistory();
+        }
+    } catch (e) {
+        console.error("Failed to delete history item:", e);
+    }
+};
+
 async function loadAnimeCatalog() {
+    loadWatchHistory();
+
     try {
         const repoName = window.location.pathname.split('/')[1];
         const basePath = window.location.origin.includes('github.io') ? `/${repoName}/` : './';
