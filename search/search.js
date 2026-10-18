@@ -7,7 +7,7 @@ let debounceTimer = null;
 const SEARCH_QUERY = `
 query ($search: String, $format: MediaFormat, $genre: String, $sort: [MediaSort]) {
   Page (page: 1, perPage: 24) {
-    media (search: $search, format: $format, genre: $genre, sort: $sort, type: ANIME) {
+    media (search: $search, format: $format, genre: $genre, sort: $sort, type: ANIME, isAdult: false) {
       id
       title {
         english
